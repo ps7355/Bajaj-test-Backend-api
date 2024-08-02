@@ -37,16 +37,18 @@ const separateData = (data) => {
 // Helper function to find the highest alphabet
 const findHighestAlphabet = (alphabets) => {
   if (alphabets.length === 0) return [];
-  let highest = alphabets[0].toLowerCase();
+  
+  let highest = alphabets[0];
 
   alphabets.forEach(letter => {
-    if (letter.toLowerCase() > highest) {
-      highest = letter.toLowerCase();
+    if (letter.toLowerCase() > highest.toLowerCase()) {
+      highest = letter;
     }
   });
 
   return [highest];
 };
+
 
 // POST /bfhl route
 app.post('/bfhl', (req, res) => {
