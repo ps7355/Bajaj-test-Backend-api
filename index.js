@@ -1,8 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors'); // Import the cors package
+
 const app = express();
 
 app.use(bodyParser.json());
+
+// Enable CORS for all origins (or specify your frontend URL)
+// For development, you might use app.use(cors()); to allow all origins
+app.use(cors());
 
 // Sample user data
 const user = {
